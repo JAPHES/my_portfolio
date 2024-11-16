@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,7 +154,8 @@
 </div>
 
        <div class="image-container">
-           <img src="{% static 'images/myimage 2.jpg" width="200" height="200"/>
+           {% load static %}
+           <img src="{% static 'images/myimage 2.jpg' %}" width="200" height="200"/>
        </div>
    <p class="tagline"> <b>Japhes Murithi</b>: Software Developer Focused on Performance and Usability.
        </p>
@@ -185,14 +186,18 @@
 
 
     <ul class="column-list">
-        <li><span>Hobbies</span></li><br>
-        <li>1. coding personal projects</li><br>
-        <li>2. Learning new web technologies</li><br>
+        <li><span>Projects</span></li><br>
+        <li>1. Library Management System</li><br>
+        <li>2. Smart Dustbin</li><br>
 
-        <li>3. Building web apps or websites for fun</li><br>
+        <li>3. Enactus Campus Website</li><br>
 
-       <li>4. Participating in hackathons</li><br>
+       <li>4. Portfolio project</li><br>
+        <li>5. Developed Mining center </li>
     </ul>
+
+
+
 
 
 
