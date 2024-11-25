@@ -1,235 +1,257 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My portfolio</title>
+    <title>My Portfolio</title>
+     {% load static %}
     <style>
-        ul li {
-            list-style: none;
-            display: inline;
-        }
-        .navbar ul {
-            list-style-type: none;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #4206e6;
+            padding: 15px 30px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
         .navbar ul li a {
-            text-decoration: none;
             color: white;
-            padding: 8px 16px;
+            text-decoration: none;
+            padding: 10px 20px;
             background-color: #11df22;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-       }
         .navbar ul li a:hover {
             background-color: red;
         }
-        .navbar ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        .navbar {
-            background-color: #4206e6;
-            padding: 10px;
-            text-align: right;
-        }
-        body{
-            background-color: #dfe7ee;
-        }
+
+        /* Header Styling */
         header {
             width: 100%;
-            height: 200px;
+            height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .header-image {
-            max-width: 100%;
-            height: auto;
-        }
-        .tagline{
+            background-color: #4206e6;
+            color: white;
             text-align: center;
         }
-        span{
-            color: black;
-            font-size: larger;
-            font-weight: bolder;
+
+        .header-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 90%;
+            object-fit: cover;
+            border: 5px solid springgreen;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .wrapper {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .wrapper:hover {
+            background-color: #11df22;
+        }
+
+        .column-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .column-list li {
+            margin-bottom: 10px;
+        }
+
+        .column-list li span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4206e6;
         }
 
         .portfolio-column {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
         }
-        .social-footer{
+
+        .column {
+            width: 30%;
+        }
+
+        .vision-column {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .vision-column h1 {
+            color: #4206e6;
+        }
+        .mission-column h1 {
+            color: #4206e6;
+        }
+
+        /* Footer Styling */
+        footer {
             background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            color: white;
+            padding: 30px 0;
             text-align: center;
         }
-        .social-links{
-            list-style: none;
+
+        .social-links {
+            list-style-type: none;
             padding: 0;
             margin: 0;
         }
-        .social-links li {
-            display: inline;
-            margin: 0 15px;
 
+        .social-links li {
+            display: inline-block;
+            margin-right: 20px;
         }
+
         .social-links a {
             color: #1e90ff;
-            transition: color 0.3s;
-            font-size: larger;
+            font-size: 18px;
             text-decoration: none;
+            transition: color 0.3s;
         }
-        .social-links a:hover{
+
+        .social-links a:hover {
             color: black;
         }
 
-            .image-container{
-               display: flex;
-               justify-content: center;
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .portfolio-column {
+                flex-direction: column;
+            }
 
-               border-radius: 50%;
+            .column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
-        img {
-            border-radius: 70%;
-            object-fit: cover;
-            border: 5px solid springgreen;
-
-        }
-        .column-list {
-            display: grid;
-            padding: 20px;
-            list-style-type: decimal;
-            margin: 5px 0;
-            gap: 15px;
-            margin: 4px;
-            background-color: #dfe7ee;
-            max-width: 200px;
-
-
-
-
-        }
-        .row{
-
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px;  /* adds margin the entire row*/
-            background-color: lightgrey;
-        }
-        .wrapper{
-            padding: 20px; /* creates the "margin" effect*/
-            background-color: lightblue;
-            transition: background-color 0.3s;
-
-
-        }
-        .wrapper:hover{
-            background-color: #11df22;
-
-        }
-
-
-
-
     </style>
 </head>
 <body>
 
-<!---------------------------------------------navbar-------------------------------------------------------->
-<nav>
-
-<div class="navbar">
+<!-- Navbar -->
+<nav class="navbar">
     <ul>
-        <li><a href="#about me">About Me</a></li>
+        <li><a href="#about-me">About Me</a></li>
         <li><a href="{% url 'contact' %}">Contact Me</a></li>
-
     </ul>
-</div>
-
-       <div class="image-container">
-           {% load static %}
-           <img src="{% static 'images/myimage 2.jpg' %}" width="200" height="200"/>
-       </div>
-   <p class="tagline"> <b>Japhes Murithi</b>: Software Developer Focused on Performance and Usability.
-       </p>
 </nav>
 
-<!---------------------------------------------------------sections------------------------------------------------->
+<!-- Header Section -->
+<header>
+    <div>
+        <img src="{% static 'images/japhes.jpg' %}" alt="Profile Picture" class="header-image">
+        <p class="tagline">Japhes Murithi: Software Developer Focused on Performance and Usability</p>
+    </div>
+</header>
 
-<section id="about me">
-
-
-<div class="row">
+<!-- About Me Section -->
+<section id="about-me">
     <div class="wrapper">
-
-
-    <ul class="column-list">
-        <li><span>Skills</span></li><br>
-        <li>1. Fronted Developer</li><br>
-        <li>2. Backed Developer</li><br>
-        <li>3. DevOps and Deployment</li><br>
-        <li>4. Cross-browser Compatibility</li><br>
-        <li>5. UX/UI Design Principles</li><br>
-    </ul>
+        <h2>Skills</h2>
+        <ul class="column-list">
+            <li>1. Frontend Developer</li>
+            <li>2. Backend Developer</li>
+            <li>3. DevOps and Deployment</li>
+            <li>4. Cross-browser Compatibility</li>
+            <li>5. UX/UI Design Principles</li>
+        </ul>
     </div>
 
+    <div class="wrapper">
+        <h2>Projects</h2>
+        <ul class="column-list">
+            <li>1. Library Management System</li>
+            <li>2. Smart Dustbin</li>
+            <li>3. Enactus Campus Website</li>
+            <li>4. Portfolio Project</li>
+            <li>5. Developed Mining Center</li>
+        </ul>
+    </div>
 
-<!---div class="portfolio-column"--->
-<div class="wrapper">
+    <div class="vision-column">
+        <h1>My Vision</h1>
+        <p>As a software engineer, my vision is to be a leader in the field of technology, constantly pushing boundaries to deliver
+            innovative, efficient, and sustainable solutions that make a positive impact on society. I aspire to create software that
+            not only addresses real-world challenges but also improves lives by enhancing accessibility, usability, and overall user experience.
+            My mission is to continuously grow and refine my skills in various domains of software development, from coding to problem-solving,
+            ensuring that I can deliver high-quality, user-centric products. I am committed to fostering collaboration, learning from others,
+            and contributing to the advancement of technology, with the ultimate goal of shaping a smarter, more connected future.</p>
+    </div>
 
-
-    <ul class="column-list">
-        <li><span>Projects</span></li><br>
-        <li>1. Library Management System</li><br>
-        <li>2. Smart Dustbin</li><br>
-
-        <li>3. Enactus Campus Website</li><br>
-
-       <li>4. Portfolio project</li><br>
-        <li>5. Developed Mining center </li>
-    </ul>
-
-
-
-
-
-
-
-</div>
-
-
+     <div class="mission-column">
+        <h1>My Mission</h1>
+        <p>My mission as a software engineer is to continually hone my skills and expertise to design and develop high-quality,
+            user-centric software solutions that solve real-world problems. I am committed to producing work that is both functional and impactful,
+            ensuring that the products I build improve the lives of their users. I believe in the power of collaboration, and my goal is to foster
+            strong working relationships with teams and clients to create technology that truly meets the needs of its users. Through dedication,
+            continuous improvement, and a passion for technology, I strive to make meaningful contributions to the tech community and to help
+            build a more efficient, sustainable, and inclusive digital future.</p>
+    </div>
 </section>
 
-
-<!------------------------------------------------------footer-------------------------------------------------------->
-
-<footer class="social-footer">
+<!-- Footer Section -->
+<footer>
     <ul class="social-links">
         <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank">Facebook</a></li>
         <li><a href="https://github.com/JAPHES" target="_blank">GitHub</a></li>
-        <li><a href="https://wa.me/0769809329" target="_blank">WhatsAPP</a></li>
-        <li><a href="https://www.linkedin.com/in/Japhes Murithi" target="_blank">LinkedIn</a></li>
-
-
-
+        <li><a href="https://wa.me/0769809329" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/Japhes-Murithi" target="_blank">LinkedIn</a></li>
     </ul>
-
 </footer>
-
-
-
-
-
-
-
-
 
 </body>
 </html>
