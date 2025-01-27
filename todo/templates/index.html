@@ -17,7 +17,7 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: darkgreen;
+            background-color: lightgrey;
             padding: 15px 30px;
             text-align: right;
             position: sticky;
@@ -39,7 +39,7 @@
             color: white;
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #11df22;
+            background-color: darkgrey;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -55,22 +55,29 @@
             max-width: 1250px; /* Limit the container width */
             margin: 0 auto;                    /* Center the container horizontally */
             padding: 20px;
-            background-color: black;          /* Optional: Add a background color */
+            /*background-image: <img src="{% static 'images/japhes10.jpg' %}" alt="About Me Picture" class="about-me-image">;          /* Optional: Add a background color */
+            background-image: url("{% static 'images/japhes11.jpg' %}");
+            background-position: right;
+            background-size: cover;
             border-radius: 10px;              /* Optional: Add rounded corners */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
             height: 250px;
         }
         h1{
-            color: white;
+            color: red;
+            alignment: left;
         }
         h2{
-            color: purple;
+            color: orangered;
         }
         h4{
-            color: blue;
+            color: yellow;
         }
         h3{
-            color: rebeccapurple;
+            color: white;
+        }
+        span{
+            color: greenyellow;
         }
            /* Align the content on the left */
         .header-content {
@@ -96,7 +103,7 @@
               max-width: 1230px; /* Center the container */
               width: 100%;
               margin: 0 auto;
-              background: linear-gradient(to right, darkblue, pink);; /* Optional: White background */
+              background: honeydew);; /* Optional: White background */
               padding: 20px;
               border-radius: 10px; /* Optional: Add rounded corners */
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
@@ -112,11 +119,7 @@
              margin-bottom: 20px;
         }
 
-        .column-list {
-             list-style-type: disc;
-             margin-left: 20px;
-             font-size: 16px;
-        }
+
 
            /* Image container styling */
         .image-column {
@@ -161,124 +164,117 @@
                 /* Column styling */
         .column {
              flex: 1; /* Each column takes equal width */
-             background: linear-gradient(to right, darkblue, pink);; /* Background color for the columns */
+             background: linear-gradient(to right, deeppink, green);; /* Background color for the columns */
              padding: 20px;
              border-radius: 8px; /* Rounded corners */
              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+             transition: grey; /* Smooth transition */
+
+
         }
+                            /*CURRENT PROJECTS STYLING*/
 
-              /* Header styling */
-        .column h3 {
-             font-size: 20px;
-             color: #007BFF; /* Header color */
-             margin-bottom: 10px; /* Space between header and content */
-        }
+/* Styling for the text above the columns */
+.intro-text {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
 
-          /* Content styling */
-        .column p {
-             font-size: 16px;
-              color: #333; /* Content text color */
-        }
+/* Container for the columns */
+.columns-container {
+    display: flex;
+    gap: 20px; /* Space between columns */
+}
 
+/* Individual column styling */
+.column {
+    width: 250px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.column:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 
+/* Overlay for hover effect */
+.column-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
 
+/* Show overlay on hover */
+.column:hover .column-overlay {
+    opacity: 1;
+}
 
+/* Button styling */
+.btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.btn:hover {
+    background-color: #0056b3;
+}
+.vision-mission-section {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: 50vh;
+        background-color: burlywood;
+    }
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 1200px;
+    }
 
+    .vision-column, .mission-column {
+        width: 45%;
+        padding: 20px;
+    }
 
+    h1 {
+        text-align: center;
+    }
 
-
-
-
-
-
-
-
-
-        /*.about-me-image {
-             width: 100%;
-             max-height: 300px; /* Limit the image height */
-             /*object-fit: cover; /* Make the image scale well */
-             /*border-radius: 10px; /* Optional: Round corners for the image */
-        /*}*/
-
-
-
-
-
-
-
-
-
-        .tagline {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-
-        .wrapper {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .wrapper:hover {
-            background-color: #11df22;
-        }
-
-        .column-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .column-list li {
-            margin-bottom: 10px;
-        }
-
-        .column-list li span {
-            font-size: 20px;
-            font-weight: bold;
-            color: #4206e6;
-        }
-
-        .portfolio-column {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
 
         .column {
             width: 30%;
         }
 
-        .vision-column, .mission-column {
-            background-color: #e8f5e9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-
-        }
-
-        .vision-column h1, .mission-column h1 {
-            color: #4206e6;
-        }
+                         /*THE FOOTER*/
 
         /* Footer Styling */
         footer {
@@ -310,73 +306,28 @@
             color: black;
         }
 
-        /* Media Query for Tablet and Mobile */
-        @media (max-width: 1024px) {
-            .navbar ul li {
-                margin-right: 15px;
-            }
-
-            .portfolio-column {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .column {
-                width: 100%;
-            }
-
-            .tagline {
-                font-size: 18px;
-            }
-
-            .wrapper {
-                padding: 15px;
-            }
-
-            .social-links li {
-                margin-right: 10px;
-            }
+        .column {
+            width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .navbar ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-            .tagline {
-                font-size: 16px;
-            }
-
-            .vision-column,
-            .mission-column {
-                padding: 15px;
-            }
-
-            .column-list li {
-                font-size: 16px;
-            }
-
-            footer {
-                font-size: 14px;
-            }
-
-            .tagline {
-                font-size: 14px;
-            }
-
-            .vision-column,
-            .mission-column {
-                padding: 10px;
-            }
-
-            .column-list li {
-                font-size: 14px;
-            }
-
-            footer {
-                font-size: 12px;
-            }
+        .tagline {
+            font-size: 18px;
         }
+
+        .wrapper {
+            padding: 15px;
+        }
+
+        .social-links li {
+            margin-right: 10px;
+        }
+
+
+
+        footer {
+            font-size: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -395,9 +346,9 @@
 <header class="header-section">
     <div class="header-content">
         <h2 class="tagline">HI,I'M</h2>
-        <h1>JAPHES MURITHI</h1>
+        <h2><span>JAPHES MURITHI</span></h2>
         <h4>Software Engineer Focused on Performance and Usability.</h4>
-        <h3>Welcome!</h3>
+        <h3>Welcome 🎉✨🌟👋😊!</h3>
     </div>
 </header>
 
@@ -431,9 +382,13 @@
         </div>
     </div>
 </section>
+                    <!----------------WHAT I DO--------------------->
+ <div class="intro-text">
+        <h2><u>WHAT I DO!</u></h2>
+        <p>Discover my latest amazing offerings in photography, design, and technology.</p>
+    </div>
 
   <div class="container">
-    <p class="intro-text"><u>WHAT I DO</u>:</p>
     <div class="row">
         <div class="column">
             <h3>Graphic Design</h3>
@@ -447,50 +402,74 @@
                 Check the skills section for more on my strengths and abilities.</p>
         </div>
         <div class="column">
-            <h3>Vedio/Photography</h3>
-            <p>I excel in photography, videography, and editing of any kind.
-                Be it weddings, promos, graduations, birthdays, or products.</p>
+            <h3>IoT Projects</h3>
+            <p>I excel in IoT projects, be it smart home devices, automation systems, or connected devices for various applications.</p>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="vision-column">
-        <h1><u>My Vision</u></h1>
-        <p>As a software engineer, my vision is to be a leader in the field of technology, constantly pushing boundaries to deliver
-            innovative, efficient, and sustainable solutions that make a positive impact on society. I aspire to create software that
-            not only addresses real-world challenges but also improves lives by enhancing accessibility, usability, and overall user experience.
-            My mission is to continuously grow and refine my skills in various domains of software development, from coding to problem-solving,
-            ensuring that I can deliver high-quality, user-centric products. I am committed to fostering collaboration, learning from others,
-            and contributing to the advancement of technology, with the ultimate goal of shaping a smarter, more connected future.</p>
+           <!------------------------CURRENT PROJECTS------------------------>
+<!-- Introductory text -->
+    <div class="intro-text">
+        <h2><u>MY LATEST PROJECTS</u></h2>
+        <p>Discover my latest amazing offerings in photography, design, and technology.</p>
     </div>
 
-     <div class="mission-column">
-        <h1><u>My Mission</u></h1>
-        <p>My mission as a software engineer is to continually hone my skills and expertise to design and develop high-quality,
-            user-centric software solutions that solve real-world problems. I am committed to producing work that is both functional and impactful,
-            ensuring that the products I build improve the lives of their users. I believe in the power of collaboration, and my goal is to foster
-            strong working relationships with teams and clients to create technology that truly meets the needs of its users. Through dedication,
-            continuous improvement, and a passion for technology, I strive to make meaningful contributions to the tech community and to help
-            build a more efficient, sustainable, and inclusive digital future.</p>
+    <!-- Columns -->
+    <div class="columns-container">
+        <!-- Column 1 -->
+        <div class="column" style="background-image: url('{% static 'images/farm.jpg' %}');">
+            <div class="column-overlay">
+                <h3>Farms Website</h3>
+                <p>Discover amazing projects and insights.</p>
+                <button class="btn">View Project</button>
+            </div>
+        </div>
+         <br>
+        <!-- Column 2 -->
+        <div class="column" style="background-image: url('{% static 'images/japhesgraphic.jpg' %}');">
+            <div class="column-overlay">
+                <h3>Personal Portfolio</h3>
+                <p>Explore creative designs and ideas.</p>
+                <button class="btn">View Project</button>
+            </div>
+        </div>
+        <br>
+        <!-- Column 3 -->
+        <div class="column" style="background-image: url('{% static 'images/smarthelmet.jpg' %}');">
+            <div class="column-overlay">
+                <h3>IoT Project</h3>
+                <p>See the latest in technology and trends.</p>
+                <button class="btn">View Project</button>
+            </div>
+        </div>
+    </div>
+                        <!----------------------Vision and Mission Section------------>
+          <br>
+          <br>
+<section class="vision-mission-section">
+    <div class="container">
+        <div class="vision-column">
+            <h2><u>My Vision</u></h2>
+            <p>As a software engineer, my vision is to be a leader in the field of technology, constantly pushing boundaries to deliver
+                innovative, efficient, and sustainable solutions that make a positive impact on society. I aspire to create software that
+                not only addresses real-world challenges but also improves lives by enhancing accessibility, usability, and overall user experience.
+                My mission is to continuously grow and refine my skills in various domains of software development, from coding to problem-solving,
+                ensuring that I can deliver high-quality, user-centric products. I am committed to fostering collaboration, learning from others,
+                and contributing to the advancement of technology, with the ultimate goal of shaping a smarter, more connected future.</p>
+        </div>
+
+        <div class="mission-column">
+            <h2><u>My Mission</u></h2>
+            <p>My mission as a software engineer is to continually hone my skills and expertise to design and develop high-quality,
+                user-centric software solutions that solve real-world problems. I am committed to producing work that is both functional and impactful,
+                ensuring that the products I build improve the lives of their users. I believe in the power of collaboration, and my goal is to foster
+                strong working relationships with teams and clients to create technology that truly meets the needs of its users. Through dedication,
+                continuous improvement, and a passion for technology, I strive to make meaningful contributions to the tech community and to help
+                build a more efficient, sustainable, and inclusive digital future.</p>
+        </div>
     </div>
 </section>
-
+                          <!--------------Footer----------------->
 <!-- Footer Section with Icons -->
 <footer>
     <p>Follow me on these sites. Thank you!</p>
@@ -502,10 +481,6 @@
         <li><a href="https://instagram.com/japhesmurithi target="_blank"><i class="fab fa-instagram"></i></a></li>
         <li><a href="https://t.me/Techie" target="_blank"><i class="fab fa-telegram"></i></a></li>
         <li><a href="https://www.tiktok.com/techie554" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-
-
-
-
     </ul>
 </footer>
 
