@@ -15,6 +15,8 @@ def contact(request):
     return render(request, 'contact.html', {'form': form})
 def success(request):
     return render(request, 'success.html')
+def gallery(request):
+    return render(request, 'gallery.html')  # Render the gallery template
 
 
 

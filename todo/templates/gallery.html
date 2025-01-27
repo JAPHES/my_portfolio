@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Page</title>
+  {% load static %}
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #4caf50;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-bottom: 5px solid #4caf50;
+    }
+    .gallery-item .description {
+      padding: 15px;
+      font-size: 1rem;
+      color: #555;
+      background-color: #f4f4f4;
+      text-align: left;
+      position: relative;
+    }
+    .gallery-item .description strong {
+      color: #4caf50;
+    }
+    /* Hover overlay effect on description only */
+    .gallery-item .description::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(76, 175, 80, 0.3); /* Light green color */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 10px;
+    }
+    .gallery-item .description:hover::after {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .gallery-item img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Gallery</h1>
+  <p>Explore beautiful moments captured in time.</p>
+
+  <div class="gallery-container">
+    <!-- Gallery Item 1 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes.jpg' %}" alt="Picture 1">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 2 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes2.jpg' %}" alt="Picture 2">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 3 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes3.jpg' %}" alt="Picture 3">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 4 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes4.jpg' %}" alt="Picture 4">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 5 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes5.jpg' %}" alt="Picture 5">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 6 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes6.jpg' %}" alt="Picture 6">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 7 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes7.jpg' %}" alt="Picture 7">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Item 8 -->
+    <div class="gallery-item">
+      <img src="{% static 'images/japhes8.jpg' %}" alt="Picture 8">
+      <div class="description">
+        <strong>Description:</strong>
+        <p>This is a beautiful picture capturing a moment in time. The details in the image make it feel like a timeless piece.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

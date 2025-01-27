@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
-     {% load static %}
+    {% load static %}
+    <!-- Add Font Awesome CDN link to the head for icon usage -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -15,9 +17,9 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: #4206e6;
+            background-color: darkgreen;
             padding: 15px 30px;
-            text-align: center;
+            text-align: right;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -45,27 +47,170 @@
         .navbar ul li a:hover {
             background-color: red;
         }
-
-        /* Header Styling */
-        header {
-            width: 100%;
-            height: 300px;
+             /* Center the header section with limited width */
+        .header-section {
             display: flex;
-            justify-content: center;
             align-items: center;
-            background-color: #4206e6;
+            justify-content: center;
+            max-width: 1250px; /* Limit the container width */
+            margin: 0 auto;                    /* Center the container horizontally */
+            padding: 20px;
+            background-color: black;          /* Optional: Add a background color */
+            border-radius: 10px;              /* Optional: Add rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+            height: 250px;
+        }
+        h1{
             color: white;
-            text-align: center;
+        }
+        h2{
+            color: purple;
+        }
+        h4{
+            color: blue;
+        }
+        h3{
+            color: rebeccapurple;
+        }
+           /* Align the content on the left */
+        .header-content {
+             flex: 1; /* Take up remaining space on the left */
+             text-align: left; /* Align text to the left */
+             padding-right: 20px; /* Add spacing between text and image */
         }
 
-        .header-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 90%;
-            object-fit: cover;
-            border: 5px solid springgreen;
-            margin-bottom: 20px;
+               /*ABOUT ME STYLING*/
+              /* About Me Section */
+        #about-me {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             padding: 40px 20px;
+             background-color: #f9f9f9; /* Optional: Background for the section */
         }
+
+        .about-me-container {
+              display: grid;
+              grid-template-columns: 1fr 1fr; /* Two equal columns */
+              gap: 20px;
+              max-width: 1230px; /* Center the container */
+              width: 100%;
+              margin: 0 auto;
+              background: linear-gradient(to right, darkblue, pink);; /* Optional: White background */
+              padding: 20px;
+              border-radius: 10px; /* Optional: Add rounded corners */
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+        }
+
+        .text-column {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+        }
+
+        .wrapper {
+             margin-bottom: 20px;
+        }
+
+        .column-list {
+             list-style-type: disc;
+             margin-left: 20px;
+             font-size: 16px;
+        }
+
+           /* Image container styling */
+        .image-column {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden; /* Ensures the image does not overflow */
+              border-radius: 10px; /* Adds rounded corners to the container */
+              background-color: #eaeaea; /* Optional: Light background for the container */
+              height: 100%; /* Matches the height of the text column */
+              aspect-ratio: 1; /* Keeps the container square */
+        }
+
+                /* Image styling */
+        .about-me-image {
+              width: 100%; /* Image will stretch to fill the width */
+              height: 100%; /* Ensures the image fills the container */
+              object-fit: cover; /* Maintains aspect ratio and crops overflow */
+              border-radius: 10px; /* Ensures the image matches the container's rounded corners */
+        }
+               /* Wrapper for the content */
+        .container {
+             text-align: center; /* Center-aligns the text and row */
+             margin: 20px auto; /* Adds spacing and centers the entire block */
+             max-width: 1200px; /* Limits the total width of the content */
+        }
+
+               /* Small sentence styling */
+        .intro-text {
+             font-size: 18px;
+             margin-bottom: 20px; /* Space between the sentence and columns */
+             color: #555; /* Subtle color for the sentence */
+        }
+
+               /* Row styling */
+        .row {
+             display: flex;
+             justify-content: space-between; /* Distributes columns evenly */
+             gap: 20px; /* Adds space between columns */
+        }
+
+                /* Column styling */
+        .column {
+             flex: 1; /* Each column takes equal width */
+             background: linear-gradient(to right, darkblue, pink);; /* Background color for the columns */
+             padding: 20px;
+             border-radius: 8px; /* Rounded corners */
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+              /* Header styling */
+        .column h3 {
+             font-size: 20px;
+             color: #007BFF; /* Header color */
+             margin-bottom: 10px; /* Space between header and content */
+        }
+
+          /* Content styling */
+        .column p {
+             font-size: 16px;
+              color: #333; /* Content text color */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*.about-me-image {
+             width: 100%;
+             max-height: 300px; /* Limit the image height */
+             /*object-fit: cover; /* Make the image scale well */
+             /*border-radius: 10px; /* Optional: Round corners for the image */
+        /*}*/
+
+
+
+
+
+
+
+
 
         .tagline {
             font-size: 24px;
@@ -122,25 +267,16 @@
             width: 30%;
         }
 
-        .vision-column {
+        .vision-column, .mission-column {
             background-color: #e8f5e9;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
-        }
-        .mission-column {
-            background-color: #e8f5e9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+
         }
 
-        .vision-column h1 {
-            color: #4206e6;
-        }
-        .mission-column h1 {
+        .vision-column h1, .mission-column h1 {
             color: #4206e6;
         }
 
@@ -165,7 +301,7 @@
 
         .social-links a {
             color: #1e90ff;
-            font-size: 18px;
+            font-size: 24px;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -174,15 +310,71 @@
             color: black;
         }
 
-        /* Media Query for Mobile */
-        @media (max-width: 768px) {
+        /* Media Query for Tablet and Mobile */
+        @media (max-width: 1024px) {
+            .navbar ul li {
+                margin-right: 15px;
+            }
+
             .portfolio-column {
                 flex-direction: column;
+                gap: 20px;
             }
 
             .column {
                 width: 100%;
-                margin-bottom: 20px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .wrapper {
+                padding: 15px;
+            }
+
+            .social-links li {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .tagline {
+                font-size: 16px;
+            }
+
+            .vision-column,
+            .mission-column {
+                padding: 15px;
+            }
+
+            .column-list li {
+                font-size: 16px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+
+            .tagline {
+                font-size: 14px;
+            }
+
+            .vision-column,
+            .mission-column {
+                padding: 10px;
+            }
+
+            .column-list li {
+                font-size: 14px;
+            }
+
+            footer {
+                font-size: 12px;
             }
         }
     </style>
@@ -192,45 +384,94 @@
 <!-- Navbar -->
 <nav class="navbar">
     <ul>
+        <li><a href="#">Home</a></li>
         <li><a href="#about-me">About Me</a></li>
         <li><a href="{% url 'contact' %}">Contact Me</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
     </ul>
 </nav>
 
 <!-- Header Section -->
-<header>
-    <div>
-        <img src="{% static 'images/japhes.jpg' %}" alt="Profile Picture" class="header-image">
-        <p class="tagline">Japhes Murithi: Software Developer Focused on Performance and Usability</p>
+<header class="header-section">
+    <div class="header-content">
+        <h2 class="tagline">HI,I'M</h2>
+        <h1>JAPHES MURITHI</h1>
+        <h4>Software Engineer Focused on Performance and Usability.</h4>
+        <h3>Welcome!</h3>
     </div>
 </header>
 
-<!-- About Me Section -->
-<section id="about-me">
-    <div class="wrapper">
-        <h2>Skills</h2>
-        <ul class="column-list">
-            <li> Frontend Developer</li>
-            <li> Backend Developer</li>
-            <li> DevOps and Deployment</li>
-            <li> Cross-browser Compatibility</li>
-            <li> UX/UI Design Principles</li>
-        </ul>
-    </div>
 
-    <div class="wrapper">
-        <h2>Projects</h2>
-        <ul class="column-list">
-            <li> Library Management System</li>
-            <li> Smart Dustbin</li>
-            <li> Enactus Campus Website</li>
-            <li> Portfolio Project</li>
-            <li> Developed Mining Center</li>
-        </ul>
+                               <!-- About Me Section -->
+<section id="about-me">
+    <div class="about-me-container">
+                                <!-- Left Column -->
+        <div class="text-column">
+            <div class="wrapper">
+                <h2><u>WHO AM I?</u></h2>
+                <p>Passionate IT Technician with deep faith, honesty, and diligence.
+                    Expert in solving complex problems with precision and efficiency,
+                    showcasing a keen eye for detail and adherence to instructions.</p>
+                <br>
+                <p>Goal-oriented, adaptable, and continuously learning to stay ahead in the tech industry.</p>
+            </div>
+
+            <div class="wrapper">
+                <h2><u>About Me:</u></h2>
+                <p>I am a Software Engineer, Fullstack Developer, Graphic Designer, Video Editor, and Photographer.</p>
+                <br>
+                <p>My passion lies in creating impactful digital experiences across various platforms,
+                    combining technical expertise and creativity. ✨</p>
+            </div>
+        </div>
+
+                            <!-- Right Column that contains my image-->
+        <div class="image-column">
+            <img src="{% static 'images/japhes.jpg' %}" alt="About Me Picture" class="about-me-image">
+        </div>
     </div>
+</section>
+
+  <div class="container">
+    <p class="intro-text"><u>WHAT I DO</u>:</p>
+    <div class="row">
+        <div class="column">
+            <h3>Graphic Design</h3>
+            <p>I have done Graphic Design for more than 1 year,
+                creating logos, business cards, brochures, magazines,
+                posters, mockups, and flyers.</p>
+        </div>
+        <div class="column">
+            <h3>Development</h3>
+            <p>I am a Full Stack Developer, creating web apps.
+                Check the skills section for more on my strengths and abilities.</p>
+        </div>
+        <div class="column">
+            <h3>Vedio/Photography</h3>
+            <p>I excel in photography, videography, and editing of any kind.
+                Be it weddings, promos, graduations, birthdays, or products.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="vision-column">
-        <h1>My Vision</h1>
+        <h1><u>My Vision</u></h1>
         <p>As a software engineer, my vision is to be a leader in the field of technology, constantly pushing boundaries to deliver
             innovative, efficient, and sustainable solutions that make a positive impact on society. I aspire to create software that
             not only addresses real-world challenges but also improves lives by enhancing accessibility, usability, and overall user experience.
@@ -240,7 +481,7 @@
     </div>
 
      <div class="mission-column">
-        <h1>My Mission</h1>
+        <h1><u>My Mission</u></h1>
         <p>My mission as a software engineer is to continually hone my skills and expertise to design and develop high-quality,
             user-centric software solutions that solve real-world problems. I am committed to producing work that is both functional and impactful,
             ensuring that the products I build improve the lives of their users. I believe in the power of collaboration, and my goal is to foster
@@ -250,14 +491,21 @@
     </div>
 </section>
 
-<!-- Footer Section -->
+<!-- Footer Section with Icons -->
 <footer>
-    <p>Follow me on these sites. Thankyou!</p>
+    <p>Follow me on these sites. Thank you!</p>
     <ul class="social-links">
-        <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank">Facebook</a></li>
-        <li><a href="https://github.com/JAPHES" target="_blank">GitHub</a></li>
-        <li><a href="https://wa.me/0769809329" target="_blank">WhatsApp</a></li>
-        <li><a href="https://www.linkedin.com/in/Japhes-Murithi" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://github.com/JAPHES" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/japhes-murithi" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://twitter.com/JaphesMurithi" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com/japhesmurithi target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://t.me/Techie" target="_blank"><i class="fab fa-telegram"></i></a></li>
+        <li><a href="https://www.tiktok.com/techie554" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+
+
+
+
     </ul>
 </footer>
 
