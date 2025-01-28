@@ -1,5 +1,5 @@
 """
-ASGI config for portfolio_project project.
+ASGI config for todo_project project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
