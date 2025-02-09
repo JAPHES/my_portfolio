@@ -6,10 +6,12 @@
     {% load static %}
     <!-- Add Font Awesome CDN link to the head for icon usage -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f6f9;
+            background-color: #e3f2fd;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -55,8 +57,8 @@
             max-width: 1250px; /* Limit the container width */
             margin: 0 auto;                    /* Center the container horizontally */
             padding: 20px;
-            /*background-image: <img src="{% static 'images/japhes10.jpg' %}" alt="About Me Picture" class="about-me-image">;          /* Optional: Add a background color */
-            background-image: url("{% static 'images/japhes11.jpg' %}");
+            background-color: black;
+            /*background-image: url("{% static 'images/japhes11.jpg' %}");*/
             background-position: right;
             background-size: cover;
             border-radius: 10px;              /* Optional: Add rounded corners */
@@ -64,14 +66,14 @@
             height: 250px;
         }
         h1{
-            color: red;
-            alignment: left;
+            color: blue;
+            /*alignment: left;*/
         }
         h2{
-            color: orangered;
+            color: blue;
         }
         h4{
-            color: yellow;
+            color: red;
         }
         h3{
             color: white;
@@ -81,10 +83,35 @@
         }
            /* Align the content on the left */
         .header-content {
-             flex: 1; /* Take up remaining space on the left */
-             text-align: left; /* Align text to the left */
-             padding-right: 20px; /* Add spacing between text and image */
-        }
+    position: relative;
+    left: -300px; /* Slightly move the text from the left */
+    text-align: left;
+}
+
+.header-content h2 {
+    font-size: 2rem; /* Default size */
+    margin: 5px 0;
+}
+
+.header-content h2 span {
+    font-size: 4rem; /* Make "JAPHES MURITHI" much bigger */
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff33a6, #3399ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-content h4 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: opacity 1s ease-in-out;
+
+}
+
+
+.btn h3 {
+    margin: 0;
+}
 
                /*ABOUT ME STYLING*/
               /* About Me Section */
@@ -93,7 +120,7 @@
              justify-content: center;
              align-items: center;
              padding: 40px 20px;
-             background-color: #f9f9f9; /* Optional: Background for the section */
+             background-color: #e3f2fd; /* Optional: Background for the section */
         }
 
         .about-me-container {
@@ -103,7 +130,7 @@
               max-width: 1230px; /* Center the container */
               width: 100%;
               margin: 0 auto;
-              background: honeydew);; /* Optional: White background */
+              background: white);; /* Optional: White background */
               padding: 20px;
               border-radius: 10px; /* Optional: Add rounded corners */
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
@@ -147,31 +174,45 @@
              max-width: 1200px; /* Limits the total width of the content */
         }
 
-               /* Small sentence styling */
-        .intro-text {
-             font-size: 18px;
-             margin-bottom: 20px; /* Space between the sentence and columns */
-             color: #555; /* Subtle color for the sentence */
-        }
+                                            /*WHAT I DO*/
+           /* What I Do - Centered Cards */
+.what-i-do-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
 
-               /* Row styling */
-        .row {
-             display: flex;
-             justify-content: space-between; /* Distributes columns evenly */
-             gap: 20px; /* Adds space between columns */
-        }
+.card {
+    width: 500px;
+    height: 250px;
+    background: linear-gradient(90deg, #ff33a6, #3399ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-                /* Column styling */
-        .column {
-             flex: 1; /* Each column takes equal width */
-             background: linear-gradient(to right, deeppink, green);; /* Background color for the columns */
-             padding: 20px;
-             border-radius: 8px; /* Rounded corners */
-             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-             transition: grey; /* Smooth transition */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: blue;
+}
+
+.card p {
+    font-size: 1rem;
+    color: white;
+}
 
 
-        }
+
                             /*CURRENT PROJECTS STYLING*/
 
 /* Styling for the text above the columns */
@@ -249,7 +290,7 @@
         display: flex;
         justify-content: center;
         align-items: stretch;
-        height: 50vh;
+        height: 30vh;
         background-color: burlywood;
     }
 
@@ -274,7 +315,8 @@
             width: 30%;
         }
 
-                         /*THE FOOTER*/
+
+        /*THE FOOTER*/
 
         /* Footer Styling */
         footer {
@@ -328,6 +370,8 @@
             font-size: 12px;
         }
 
+
+
     </style>
 </head>
 <body>
@@ -338,7 +382,12 @@
         <li><a href="#">Home</a></li>
         <li><a href="#about-me">About Me</a></li>
         <li><a href="{% url 'contact' %}">Contact Me</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'cv_page' %}">Resume</a></li>
+        <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-blue" href="{% static 'files/KANGU_CV.pdf' %}" download="KANGU_CV.pdf">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
     </ul>
 </nav>
 
@@ -347,8 +396,8 @@
     <div class="header-content">
         <h2 class="tagline">HI,I'M</h2>
         <h2><span>JAPHES MURITHI</span></h2>
-        <h4>Software Engineer Focused on Performance and Usability.</h4>
-        <h3>Welcome 🎉✨🌟👋😊!</h3>
+        <h4></h4>
+        <button class="btn"><h3>Welcome 🎉✨🌟👋😊!<h3></h3></button>
     </div>
 </header>
 
@@ -369,7 +418,7 @@
 
             <div class="wrapper">
                 <h2><u>About Me:</u></h2>
-                <p>I am a Software Engineer, Fullstack Developer, Graphic Designer, Video Editor, and Photographer.</p>
+                <p>I am a Software Engineer, Fullstack Developer, Graphic Designer and Photographer.</p>
                 <br>
                 <p>My passion lies in creating impactful digital experiences across various platforms,
                     combining technical expertise and creativity. ✨</p>
@@ -378,40 +427,38 @@
 
                             <!-- Right Column that contains my image-->
         <div class="image-column">
-            <img src="{% static 'images/japhes.jpg' %}" alt="About Me Picture" class="about-me-image">
+            <img src="{% static 'images/japhess.jpg' %}" alt="About Me Picture" class="about-me-image">
         </div>
     </div>
 </section>
                     <!----------------WHAT I DO--------------------->
  <div class="intro-text">
-        <h2><u>WHAT I DO!</u></h2>
-        <p>Discover my latest amazing offerings in photography, design, and technology.</p>
-    </div>
+    <h2><u>WHAT I DO!</u></h2>
+    <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation.</p>
+</div>
 
-  <div class="container">
-    <div class="row">
-        <div class="column">
-            <h3>Graphic Design</h3>
-            <p>I have done Graphic Design for more than 1 year,
-                creating logos, business cards, brochures, magazines,
-                posters, mockups, and flyers.</p>
-        </div>
-        <div class="column">
-            <h3>Development</h3>
-            <p>I am a Full Stack Developer, creating web apps.
-                Check the skills section for more on my strengths and abilities.</p>
-        </div>
-        <div class="column">
-            <h3>IoT Projects</h3>
-            <p>I excel in IoT projects, be it smart home devices, automation systems, or connected devices for various applications.</p>
-        </div>
+<!-- Cards Container -->
+<div class="what-i-do-container">
+    <div class="card">
+        <h3>Graphic Design</h3>
+        <p>I have done Graphic Design for more than 1 year, creating logos, business cards, brochures, magazines, posters, mockups, and flyers.</p>
+    </div>
+    <div class="card">
+        <h3>Development</h3>
+        <p>I am a Full Stack Developer, creating web apps. Check the skills section for more on my strengths and abilities.</p>
+    </div>
+    <div class="card">
+        <h3>IoT Projects</h3>
+        <p>I excel in IoT projects, be it smart home devices, automation systems, or connected devices for various applications.</p>
     </div>
 </div>
+<br><br>
+
            <!------------------------CURRENT PROJECTS------------------------>
 <!-- Introductory text -->
     <div class="intro-text">
-        <h2><u>MY LATEST PROJECTS</u></h2>
-        <p>Discover my latest amazing offerings in photography, design, and technology.</p>
+        <h2><u>LATEST WORKS</u></h2>
+        <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation..</p>
     </div>
 
     <!-- Columns -->
@@ -421,8 +468,10 @@
             <div class="column-overlay">
                 <h3>Farms Website</h3>
                 <p>Discover amazing projects and insights.</p>
+                <a href="https://github.com/JAPHES/HarvestFarms_EcommerceWebsite" target="_blank">
                 <button class="btn">View Project</button>
-            </div>
+                </a>
+                </div>
         </div>
          <br>
         <!-- Column 2 -->
@@ -430,7 +479,10 @@
             <div class="column-overlay">
                 <h3>Personal Portfolio</h3>
                 <p>Explore creative designs and ideas.</p>
+                <a href="https://github.com/JAPHES/django_portfolio-project-and-also-database-concept" target="_blank">
                 <button class="btn">View Project</button>
+                </a>
+
             </div>
         </div>
         <br>
@@ -439,7 +491,9 @@
             <div class="column-overlay">
                 <h3>IoT Project</h3>
                 <p>See the latest in technology and trends.</p>
+                <a href="https://github.com/JAPHES/IoT_projects" target="_blank">
                 <button class="btn">View Project</button>
+                </a>
             </div>
         </div>
     </div>
@@ -450,22 +504,12 @@
     <div class="container">
         <div class="vision-column">
             <h2><u>My Vision</u></h2>
-            <p>As a software engineer, my vision is to be a leader in the field of technology, constantly pushing boundaries to deliver
-                innovative, efficient, and sustainable solutions that make a positive impact on society. I aspire to create software that
-                not only addresses real-world challenges but also improves lives by enhancing accessibility, usability, and overall user experience.
-                My mission is to continuously grow and refine my skills in various domains of software development, from coding to problem-solving,
-                ensuring that I can deliver high-quality, user-centric products. I am committed to fostering collaboration, learning from others,
-                and contributing to the advancement of technology, with the ultimate goal of shaping a smarter, more connected future.</p>
+           <p>To innovate and build scalable software solutions that drive efficiency and transform industries.<p>
         </div>
 
         <div class="mission-column">
             <h2><u>My Mission</u></h2>
-            <p>My mission as a software engineer is to continually hone my skills and expertise to design and develop high-quality,
-                user-centric software solutions that solve real-world problems. I am committed to producing work that is both functional and impactful,
-                ensuring that the products I build improve the lives of their users. I believe in the power of collaboration, and my goal is to foster
-                strong working relationships with teams and clients to create technology that truly meets the needs of its users. Through dedication,
-                continuous improvement, and a passion for technology, I strive to make meaningful contributions to the tech community and to help
-                build a more efficient, sustainable, and inclusive digital future.</p>
+            <p>To develop high-quality, user-centric applications using modern technologies to solve real-world problems effectively.</p>
         </div>
     </div>
 </section>
@@ -483,6 +527,28 @@
         <li><a href="https://www.tiktok.com/techie554" target="_blank"><i class="fab fa-tiktok"></i></a></li>
     </ul>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const textElement = document.querySelector(".header-content h4");
+        const texts = [
+            "Software Engineer.",
+            "Photographer.",
+            "IoT Enthusiast.",
+            "Graphic Designer."
+        ];
+        let index = 0;
 
+        function changeText() {
+            textElement.style.opacity = 0; // Fade out
+            setTimeout(() => {
+                index = (index + 1) % texts.length; // Loop back
+                textElement.textContent = texts[index]; // Change text
+                textElement.style.opacity = 1; // Fade in
+            }, 1000); // Wait for fade out transition
+        }
+
+        setInterval(changeText, 2000); // Change text every 4 seconds
+    });
+</script>
 </body>
 </html>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact Form</title>
+    {% load static %}
+    <!-- Include Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -73,7 +78,7 @@
         }
 
         h1 {
-            color: #f44336; /* Red to attract attention */
+            color: blue; /* Red to attract attention */
             margin-bottom: 20px;
             font-size: 32px;
         }
@@ -143,7 +148,7 @@
         }
 
         .column h2 {
-            color: #f44336;
+            color: blue;
             margin-bottom: 10px;
         }
 
@@ -223,10 +228,16 @@
 <!-- Navbar -->
 <nav class="navbar">
     <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'home' %}">About Me</a></li>
-        <li><a href="{% url 'contact' %}">Contact Me</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'home' %}">ABOUT ME</a></li>
+        <li><a href="{% url 'contact' %}">CONTACT ME</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'cv_page' %}">RESUME</a></li>
+        <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-blue" href="{% static 'files/KANGU_CV.pdf' %}" download="KANGU_CV.pdf">
+                        <i class="fas fa-download"></i> DOWNLOAD CV
+                    </a>
+                </li>
+
     </ul>
 </nav>
 
@@ -247,25 +258,31 @@
 
 <!-- Introductory Statement Before Three Columns -->
 <div class="intro-text">
-    <p>You can reach on me through the below information.</p>
+    <h1>Let's Work Together</h1>
+    <p>Partner with me to bring your next project to life. I’ll combine creativity and expertise to turn your vision into reality!</p>
 </div>
 
 <!-- Three Column Section Below the Form -->
 <div class="columns-container">
     <div class="column">
+        <i class="fas fa-map-marker-alt fa-2x"></i> <!-- Address Icon -->
         <h2>Address</h2>
-        <p>Chuka</p>
-        <p>Kenya</p>
+        <p>Chuka, Kenya</p>
+
     </div>
 
     <div class="column">
+        <i class="fas fa-envelope fa-2x"></i> <!-- Email Icon -->
         <h2>Email</h2>
         <p>japhesmurithi@gmail.com</p>
+        <p>techie2230@gmail.com</p>
     </div>
 
     <div class="column">
+        <i class="fas fa-phone-alt fa-2x"></i> <!-- Phone Icon -->
         <h2>Phone</h2>
         <p>0769809329</p>
+        <p>0794484452</p>
     </div>
 </div>
 <br>
@@ -274,13 +291,14 @@
 <footer>
     <p>Follow me on these sites. Thank you!</p>
     <ul class="social-links">
-        <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank">Facebook</a></li>
-        <li><a href="https://github.com/JAPHES" target="_blank">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/japhes-murithi" target="_blank">LinkedIn</a></li>
-        <li><a href="https://twitter.com/JaphesMurithi" target="_blank">Twitter</a></li>
-        <li><a href="https://instagram.com/japhesmurithi" target="_blank">Instagram</a></li>
-        <li><a href="https://t.me/Techie" target="_blank">Telegram</a></li>
-        <li><a href="https://www.tiktok.com/techie554" target="_blank">TikTok</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://github.com/JAPHES" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/japhes-murithi" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://twitter.com/JaphesMurithi" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com/japhesmurithi target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://t.me/Techie" target="_blank"><i class="fab fa-telegram"></i></a></li>
+        <li><a href="https://www.tiktok.com/techie554" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+
     </ul>
 </footer>
 
