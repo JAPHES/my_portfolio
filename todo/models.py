@@ -10,3 +10,12 @@ class Contact(models.Model):
 
    def __str__(self):
        return f"Message from {self.name}"
+
+class Project(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    link = models.URLField()
+    image = models.ImageField(upload_to='projects/')
+
+    def __str__(self):
+        return self.name

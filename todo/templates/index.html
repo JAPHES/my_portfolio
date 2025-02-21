@@ -25,11 +25,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            justify-content: flex-start; /
         }
 
         .navbar ul {
             list-style-type: none;
             padding: 0;
+            justify-content: flex-start; /
         }
 
         .navbar ul li {
@@ -63,7 +65,7 @@
             background-size: cover;
             border-radius: 10px;              /* Optional: Add rounded corners */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-            height: 250px;
+            height: 350px;
         }
         h1{
             color: blue;
@@ -120,7 +122,7 @@
              justify-content: center;
              align-items: center;
              padding: 40px 20px;
-             background-color: #e3f2fd; /* Optional: Background for the section */
+             background-color: white; /* Optional: Background for the section */
         }
 
         .about-me-container {
@@ -130,7 +132,7 @@
               max-width: 1230px; /* Center the container */
               width: 100%;
               margin: 0 auto;
-              background: white);; /* Optional: White background */
+              background: lightgray; /* Optional: White background */
               padding: 20px;
               border-radius: 10px; /* Optional: Add rounded corners */
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
@@ -314,6 +316,33 @@
         .column {
             width: 30%;
         }
+                      /*the viewing all projects button*/
+        /* Centering the button */
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Button Styling */
+.styled-button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* For smooth hover effect */
+}
+
+/* Hover Effect */
+.styled-button:hover {
+    background-color: #0056b3; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
 
 
         /*THE FOOTER*/
@@ -388,6 +417,7 @@
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </li>
+        <li><a href="{% url 'project_list' %}">View All Projects</a></li>
     </ul>
 </nav>
 
@@ -497,6 +527,11 @@
             </div>
         </div>
     </div>
+<br><br>
+    <a href="{% url 'project_list' %}" class="center-button">
+    <button type="button" class="styled-button">VIEW ALL PROJECTS</button>
+</a>
+
                         <!----------------------Vision and Mission Section------------>
           <br>
           <br>

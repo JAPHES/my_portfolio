@@ -1,5 +1,6 @@
 from django import forms
 from .models import Contact
+from .models import Project
 
 
 
@@ -16,3 +17,9 @@ def clean_message(self):
     if len(message) < 100:
         raise forms.ValidationsError("Message must be at least 100 characters")
     return message
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['name', 'description','image','link']
+
