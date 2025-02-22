@@ -11,6 +11,7 @@ urlpatterns = [
     path('cv/', views.cv_page, name='cv_page'),
     path('upload/', upload_project, name='upload_projects'),
     path('project_list/', project_list, name='project_list'),
+    path('gallery/', views.gallery, name='gallery'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

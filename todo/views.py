@@ -38,6 +38,10 @@ def success(request):
 def cv_page(request):
     return render(request, 'cv_page.html')
 
+def gallery(request):
+    return render(request, 'gallery.html')
+
+
 
 # Restrict access to superusers
 def is_superuser(user):
