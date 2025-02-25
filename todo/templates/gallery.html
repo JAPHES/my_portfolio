@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   {% load static %}
   <style>
     body {
@@ -31,7 +32,7 @@
         padding: 0;
         margin: 0; /* Remove margin to avoid spacing issues */
         display: flex;
-        justify-content: flex-end; /* Align links to the right */
+        justify-content: flex-start; /* Align links to the right */
         align-items: center;
     }
 
@@ -40,7 +41,7 @@
     }
 
     .navbar ul li a {
-        color: white;
+        color: blue;
         text-decoration: none;
         padding: 10px 20px;
         background-color: darkgrey;
@@ -136,6 +137,14 @@
         <li><a href="{% url 'home' %}">About Me</a></li>
         <li><a href="{% url 'contact' %}">Contact Me</a></li>
         <li><a href="{% url 'gallery' %}">Gallery</a></li>
+         <li class="nav-item"><a class="nav-link" href="{% url 'cv_page' %}">RESUME</a></li>
+            <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-blue" href="{% static 'files/KANGU_CV.pdf' %}" download="KANGU_CV.pdf">
+                            <i class="fas fa-download"></i> DOWNLOAD CV
+                        </a>
+                    </li>
+            <li><a href="{% url 'project_list' %}">VIEW ALL PROJECTS</a></li>
+
     </ul>
 </nav>
 
