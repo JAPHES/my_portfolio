@@ -1,187 +1,183 @@
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>My Portfolio</title>
-            {% load static %}
-            <!-- Add Font Awesome CDN link to the head for icon usage -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-            <style>
-                body {
-                    font-family: 'Arial', sans-serif;
-                    background-color: #e3f2fd;
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-                /* Navbar Styling */
-                .navbar {
-                    background-color: lightgrey;
-                    padding: 12px 25px;
-                    position: fixed; /* Fix the navbar to the top of the page */
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    z-index: 1000; /* Ensure it stays above other elements */
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-                }
-                .navbar ul {
-                     margin: 0 15px; /* Space between the links */
-                }
-                .navbar ul li {
-                    display: inline-block;
-                    margin-right: 20px;
-                }
-                .navbar ul li a {
-                    color: blue;
-                    text-decoration: none;
-                    padding: 10px 20px;
-                    background-color: darkgrey;
-                    border-radius: 5px;
-                    transition: background-color 0.3s ease;
+<!DOCTYPE html>
+<html lang="en">
 
-                }
-                .navbar ul li a:hover {
-                    background-color: red;
-                }
-                     /* Center the header section with limited width */
-                .header-section {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    max-width: 1250px; /* Limit the container width */
-                    margin: 0 auto;                    /* Center the container horizontally */
-                    padding: 20px;
-                    background-color: black;
-                    background-position: right;
-                    background-size: cover;
-                    border-radius: 10px;              /* Optional: Add rounded corners */
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-                    height: 450px;
-                }
-                h1{
-                    color: blue;
-                    /*alignment: left;*/
-                }
-                h2{
-                    color: blue;
-                }
-                h4{
-                    color: red;
-                }
-                h3{
-                    color: white;
-                }
-                span{
-                    color: greenyellow;
-                }
-                   /* Align the content on the left */
-                .header-content {
-                     position: relative;
-                     left: -300px; /* Slightly move the text from the left */
-                     text-align: left;
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    {% load static %}
+    <!-- Add Font Awesome CDN link to the head for icon usage -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Center the header section with limited width */
+        .header-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: black;
+            background-position: right;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 450px;
+            background-image: url('{% static 'images/japh.png' %}');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        h4 {
+            color: red;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        span {
+            color: greenyellow;
+        }
+
+        .header-content {
+            position: relative;
+            left: -300px;
+            text-align: left;
+        }
+
+        .tagline {
+            color: blue;
+        }
+
+        @keyframes blink {
+            0% {
+                color: blue;
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            100% {
+                color: white;
+            }
+        }
+
+        .btn h3 {
+            animation: blink 1s infinite;
+            color: blue;
         }
 
         .header-content h2 {
-            font-size: 2rem; /* Default size */
+            font-size: 2rem;
             margin: 5px 0;
         }
 
         .header-content h2 span {
-            font-size: 4rem; /* Make "JAPHES MURITHI" much bigger */
+            font-size: 4rem;
             font-weight: bold;
             background: linear-gradient(90deg, #ff33a6, #3399ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-                .header-content h4 {
-                   font-size: 2.5rem;
-                   margin-bottom: 15px;
-                   transition: opacity 1s ease-in-out;
+        .header-content h4 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            transition: opacity 1s ease-in-out;
+        }
 
-                }
+        .btn h3 {
+            margin: 0;
+        }
 
-                .btn h3 {
-                    margin: 0;
-                }
+        /* About Me Styling */
+        #about-me {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: white;
+        }
 
-                       /*                              ABOUT ME STYLING                                   */
+        .about-me-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1230px;
+            width: 100%;
+            margin: 0 auto;
+            background: lightgray;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-                #about-me {
-                     display: flex;
-                     justify-content: center;
-                     align-items: center;
-                     padding: 40px 20px;
-                     background-color: white; /* Optional: Background for the section */
-                }
+        .text-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-                .about-me-container {
-                      display: grid;
-                      grid-template-columns: 1fr 1fr; /* Two equal columns */
-                      gap: 20px;
-                      max-width: 1230px; /* Center the container */
-                      width: 100%;
-                      margin: 0 auto;
-                      background: lightgray; /* Optional: White background */
-                      padding: 20px;
-                      border-radius: 10px; /* Optional: Add rounded corners */
-                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-                }
+        .wrapper {
+            margin-bottom: 20px;
+        }
 
-                .text-column {
-                     display: flex;
-                     flex-direction: column;
-                     justify-content: center;
-                }
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            height: 100%;
+            aspect-ratio: 1;
+        }
 
-                .wrapper {
-                     margin-bottom: 20px;
-                }
+        .about-me-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
+        /* Wrapper for the content */
+        .container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
 
-
-                   /* Image container styling */
-                .image-column {
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden; /* Ensures the image does not overflow */
-                      border-radius: 10px; /* Adds rounded corners to the container */
-                      background-color: #eaeaea; /* Optional: Light background for the container */
-                      height: 100%; /* Matches the height of the text column */
-                      aspect-ratio: 1; /* Keeps the container square */
-                }
-
-                        /* Image styling */
-                .about-me-image {
-                      width: 100%; /* Image will stretch to fill the width */
-                      height: 100%; /* Ensures the image fills the container */
-                      object-fit: cover; /* Maintains aspect ratio and crops overflow */
-                      border-radius: 10px; /* Ensures the image matches the container's rounded corners */
-                }
-                       /* Wrapper for the content */
-                .container {
-                     text-align: center; /* Center-aligns the text and row */
-                     margin: 20px auto; /* Adds spacing and centers the entire block */
-                     max-width: 1200px; /* Limits the total width of the content */
-                }
-
-                                                    /*WHAT I DO*/
-                   /* What I Do - Centered Cards */
+        /* What I Do */
         .what-i-do-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px; /* Space between cards */
-            flex-wrap: wrap; /* Ensures responsiveness */
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .card {
             width: 500px;
-            height: 250px;
+            height: 550px;
             background: linear-gradient(90deg, #ff33a6, #3399ff);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -206,11 +202,7 @@
             color: white;
         }
 
-
-
-                                    /*CURRENT PROJECTS STYLING*/
-
-        /* Styling for the text above the columns */
+        /* Current Projects Styling */
         .intro-text {
             margin-bottom: 20px;
             font-size: 1.5rem;
@@ -218,13 +210,11 @@
             text-align: center;
         }
 
-        /* Container for the columns */
         .columns-container {
             display: flex;
-            gap: 20px; /* Space between columns */
+            gap: 20px;
         }
 
-        /* Individual column styling */
         .column {
             width: 250px;
             height: 300px;
@@ -239,18 +229,17 @@
         }
 
         .column:hover {
-            transform: scale(1.05); /* Slight zoom effect */
+            transform: scale(1.05);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Overlay for hover effect */
         .column-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+            background-color: rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -260,12 +249,10 @@
             color: white;
         }
 
-        /* Show overlay on hover */
         .column:hover .column-overlay {
             opacity: 1;
         }
 
-        /* Button styling */
         .btn {
             margin-top: 10px;
             padding: 10px 20px;
@@ -281,41 +268,42 @@
         .btn:hover {
             background-color: #0056b3;
         }
+
         .vision-mission-section {
-                display: flex;
-                justify-content: center;
-                align-items: stretch;
-                height: 30vh;
-                background-color: burlywood;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: 30vh;
+            background-color: burlywood;
+        }
 
-            .container {
-                display: flex;
-                justify-content: space-between;
-                width: 80%;
-                max-width: 1200px;
-            }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+        }
 
-            .vision-column, .mission-column {
-                width: 45%;
-                padding: 20px;
-            }
+        .vision-column,
+        .mission-column {
+            width: 45%;
+            padding: 20px;
+        }
 
-            h1 {
-                text-align: center;
-            }
+        h1 {
+            text-align: center;
+        }
 
+        .column {
+            width: 30%;
+        }
 
-                .column {
-                    width: 30%;
-                }
-                              /*the viewing all projects button*/
-                /* Centering the button */
+        /* Viewing all projects button */
         .center-button {
             display: flex;
             justify-content: center;
             align-items: center;
-
+            color: blue;
         }
 
         /* Button Styling */
@@ -327,257 +315,196 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s ease; /* For smooth hover effect */
+            transition: all 0.3s ease;
         }
 
         /* Hover Effect */
         .styled-button:hover {
-            background-color: #0056b3; /* Change color on hover */
-            transform: scale(1.1); /* Slightly enlarge the button */
+            background-color: #0056b3;
+            transform: scale(1.1);
         }
 
+        .column {
+            width: 100%;
+        }
 
+        .tagline {
+            font-size: 18px;
+        }
 
-                /*THE FOOTER*/
+        .wrapper {
+            padding: 15px;
+        }
 
-                /* Footer Styling */
-                footer {
-                    background-color: #333;
-                    color: white;
-                    padding: 30px 0;
-                    text-align: center;
-                }
+        .social-links li {
+            margin-right: 10px;
+        }
 
-                .social-links {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                }
+        footer {
+            font-size: 12px;
+        }
+    </style>
+</head>
 
-                .social-links li {
-                    display: inline-block;
-                    margin-right: 20px;
-                }
+<body>
 
-                .social-links a {
-                    color: #1e90ff;
-                    font-size: 24px;
-                    text-decoration: none;
-                    transition: color 0.3s;
-                }
+    <!------------------------------------ Include Navbar ------------------------------------>
+    {% include 'navbar.html' %}
 
-                .social-links a:hover {
-                    color: black;
-                }
-
-                .column {
-                    width: 100%;
-                }
-
-                .tagline {
-                    font-size: 18px;
-                }
-
-                .wrapper {
-                    padding: 15px;
-                }
-
-                .social-links li {
-                    margin-right: 10px;
-                }
-
-
-
-                footer {
-                    font-size: 12px;
-                }
-
-
-
-            </style>
-        </head>
-        <body>
-
-        <!-- Navbar -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#about-me">ABOUT ME</a></li>
-                <li><a href="{% url 'contact' %}">CONTACT ME</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'cv_page' %}">RESUME</a></li>
-                <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-blue" href="{% static 'files/KANGU_CV.pdf' %}" download="KANGU_CV.pdf">
-                                <i class="fas fa-download"></i> DOWNLOAD CV
-                            </a>
-                        </li>
-                <li><a href="{% url 'project_list' %}">VIEW ALL PROJECTS</a></li>
-                <li><a href="{% url 'gallery' %}">BEAUTIFUL MOMENTS</a></li>
-            </ul>
-        </nav>
-
-        <!-- Header Section -->
-        <header class="header-section">
-            <div class="header-content">
-                <h2 class="tagline">HI,I'M</h2>
-                <h2><span>JAPHES MURITHI</span></h2>
-                <h4></h4>
-                <button class="btn"><h3>Welcome 🎉✨🌟👋😊!<h3></h3></button>
-            </div>
-        </header>
-
-
-                                       <!-- About Me Section -->
-        <section id="about-me">
-            <div class="about-me-container">
-                                        <!-- Left Column -->
-                <div class="text-column">
-                    <div class="wrapper">
-                        <h2><u>WHO AM I?</u></h2>
-                        <p>Passionate IT Technician with deep faith, honesty, and diligence.
-                            Expert in solving complex problems with precision and efficiency,
-                            showcasing a keen eye for detail and adherence to instructions.</p>
-                        <br>
-                        <p>Goal-oriented, adaptable, and continuously learning to stay ahead in the tech industry.</p>
-                    </div>
-
-                    <div class="wrapper">
-                        <h2><u>About Me:</u></h2>
-                        <p>I am a Software Engineer, Fullstack Developer, Graphic Designer and Photographer.</p>
-                        <br>
-                        <p>My passion lies in creating impactful digital experiences across various platforms,
-                            combining technical expertise and creativity. ✨</p>
-                    </div>
-                </div>
-
-                                    <!-- Right Column that contains my image-->
-                <div class="image-column">
-                    <img src="{% static 'images/japhess.jpg' %}" alt="About Me Picture" class="about-me-image">
-                </div>
-            </div>
-        </section>
-                            <!----------------WHAT I DO--------------------->
-         <div class="intro-text">
-            <h2><u>WHAT I DO!</u></h2>
-            <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation.</p>
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-content">
+            <h2 class="tagline">HI,I'M</h2>
+            <h2><span>JAPHES MURITHI</span></h2>
+            <h4></h4>
+            <button class="btn">
+                <h3>Welcome 🎉✨🌟👋😊!</h3>
+            </button>
         </div>
+    </header>
 
-        <!-- Cards Container -->
-        <div class="what-i-do-container">
-            <div class="card">
-                <h3>Graphic Design</h3>
-                <p>I have done Graphic Design for more than 1 year, creating logos, business cards, brochures, magazines, posters, mockups, and flyers.</p>
+    <!-- About Me Section -->
+    <section id="about-me">
+        <div class="about-me-container">
+            <!-- Left Column -->
+            <div class="text-column">
+                <div class="wrapper">
+                    <h2><u>Who Am I?</u></h2>
+                    <p>Passionate IT Technician with deep faith, honesty, and diligence. Expert in solving complex problems
+                        with precision and efficiency, showcasing a keen eye for detail and adherence to instructions.</p>
+                    <br>
+                    <p>Goal-oriented, adaptable, and continuously learning to stay ahead in the tech industry.</p>
+                </div>
+
+                <div class="wrapper">
+                    <h2><u>About Me:</u></h2>
+                    <p>I am a Software Engineer, Fullstack Developer, Graphic Designer, and Photographer.</p>
+                    <br>
+                    <p>My passion lies in creating impactful digital experiences across various platforms, combining technical expertise and creativity. ✨</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Development</h3>
-                <p>I am a Full Stack Developer, creating web apps. Check the skills section for more on my strengths and abilities.</p>
-            </div>
-            <div class="card">
-                <h3>IoT Projects</h3>
-                <p>I excel in IoT projects, be it smart home devices, automation systems, or connected devices for various applications.</p>
+
+            <!-- Right Column that contains my image-->
+            <div class="image-column">
+                <img src="{% static 'images/japhess.jpg' %}" alt="About Me Picture" class="about-me-image">
             </div>
         </div>
-        <br><br>
+    </section>
 
-                   <!------------------------CURRENT PROJECTS------------------------>
-        <!-- Introductory text -->
-            <div class="intro-text">
-                <h2><u>LATEST WORKS</u></h2>
-                <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation..</p>
+    <!-- What I Do -->
+    <div class="intro-text">
+        <h2><u>What I Do!</u></h2>
+        <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation.</p>
+    </div>
+
+    <!-- Cards Container -->
+    <div class="what-i-do-container">
+        <div class="card">
+            <h3>Graphic Design</h3>
+            <p>I have done Graphic Design for more than 1 year, creating logos, business cards, brochures, magazines, posters, mockups, and flyers.</p>
+        </div>
+        <div class="card">
+            <h3>Development</h3>
+            <p>I am a Full Stack Developer, creating web apps. Check the skills section for more on my strengths and abilities.</p>
+        </div>
+        <div class="card">
+            <h3>IoT Projects</h3>
+            <p>I excel in IoT projects, be it smart home devices, automation systems, or connected devices for various applications.</p>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Current Projects -->
+    <div class="intro-text">
+        <h2><u>Latest Works!</u></h2>
+        <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation..</p>
+    </div>
+
+    <div class="columns-container">
+        <!-- Column 1 -->
+        <div class="column" style="background-image: url('{% static 'images/farm.jpg' %}');">
+            <div class="column-overlay">
+                <h3>Farms Website</h3>
+                <p>Discover amazing projects and insights.</p>
+                <a href="https://github.com/JAPHES/HarvestFarms_EcommerceWebsite" target="_blank">
+                    <button class="btn">View Project</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column" style="background-image: url('{% static 'images/japhesgraphic.jpg' %}');">
+            <div class="column-overlay">
+                <h3>Personal Portfolio</h3>
+                <p>Explore creative designs and ideas.</p>
+                <a href="https://github.com/JAPHES/django_portfolio-project-and-also-database-concept" target="_blank">
+                    <button class="btn">View Project</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column" style="background-image: url('{% static 'images/smarthelmet.jpg' %}');">
+            <div class="column-overlay">
+                <h3>IoT Project</h3>
+                <p>See the latest in technology and trends.</p>
+                <a href="https://github.com/JAPHES/IoT_projects" target="_blank">
+                    <button class="btn">View Project</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <a href="{% url 'project_list' %}" class="center-button">
+        <button type="button" class="styled-button">VIEW ALL PROJECTS</button>
+    </a>
+
+    <!-- Vision and Mission Section -->
+    <br>
+    <br>
+    <section class="vision-mission-section">
+        <div class="container">
+            <div class="vision-column">
+                <h2><u>My Vision</u></h2>
+                <p>To innovate and build scalable software solutions that drive efficiency and transform industries.<p>
             </div>
 
-            <!-- Columns -->
-            <div class="columns-container">
-                <!-- Column 1 -->
-                <div class="column" style="background-image: url('{% static 'images/farm.jpg' %}');">
-                    <div class="column-overlay">
-                        <h3>Farms Website</h3>
-                        <p>Discover amazing projects and insights.</p>
-                        <a href="https://github.com/JAPHES/HarvestFarms_EcommerceWebsite" target="_blank">
-                        <button class="btn">View Project</button>
-                        </a>
-                        </div>
-                </div>
-                 <br>
-                <!-- Column 2 -->
-                <div class="column" style="background-image: url('{% static 'images/japhesgraphic.jpg' %}');">
-                    <div class="column-overlay">
-                        <h3>Personal Portfolio</h3>
-                        <p>Explore creative designs and ideas.</p>
-                        <a href="https://github.com/JAPHES/django_portfolio-project-and-also-database-concept" target="_blank">
-                        <button class="btn">View Project</button>
-                        </a>
-
-                    </div>
-                </div>
-                <br>
-                <!-- Column 3 -->
-                <div class="column" style="background-image: url('{% static 'images/smarthelmet.jpg' %}');">
-                    <div class="column-overlay">
-                        <h3>IoT Project</h3>
-                        <p>See the latest in technology and trends.</p>
-                        <a href="https://github.com/JAPHES/IoT_projects" target="_blank">
-                        <button class="btn">View Project</button>
-                        </a>
-                    </div>
-                </div>
+            <div class="mission-column">
+                <h2><u>My Mission</u></h2>
+                <p>To develop high-quality, user-centric applications using modern technologies to solve real-world problems effectively.</p>
             </div>
-        <br><br>
-            <a href="{% url 'project_list' %}" class="center-button">
-            <button type="button" class="styled-button">VIEW ALL PROJECTS</button>
-        </a>
+        </div>
+    </section>
 
-                                <!----------------------Vision and Mission Section------------>
-                  <br>
-                  <br>
-        <section class="vision-mission-section">
-            <div class="container">
-                <div class="vision-column">
-                    <h2><u>My Vision</u></h2>
-                   <p>To innovate and build scalable software solutions that drive efficiency and transform industries.<p>
-                </div>
+    <!-- Include Footer -->
+    {% include 'footer.html' %}
 
-                <div class="mission-column">
-                    <h2><u>My Mission</u></h2>
-                    <p>To develop high-quality, user-centric applications using modern technologies to solve real-world problems effectively.</p>
-                </div>
-            </div>
-        </section>
-                                  <!--------------Footer----------------->
-        <!-- Footer Section with Icons -->
-        <footer>
-            <p>Follow me on these sites. Thank you!</p>
-            <ul class="social-links">
-                <li><a href="https://www.facebook.com/profile.php?id=61557675590019" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://github.com/JAPHES" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/japhes-murithi" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://twitter.com/JaphesMurithi" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://instagram.com/japhesmurithi target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://t.me/Techie" target="_blank"><i class="fab fa-telegram"></i></a></li>
-                <li><a href="https://www.tiktok.com/techie554" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-            </ul>
-        </footer>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const textElement = document.querySelector(".header-content h4");
-                const texts = [
-                    "Software Engineer.",
-                    "Photographer.",
-                    "IoT Enthusiast.",
-                    "Graphic Designer."
-                ];
-                let index = 0;
+    <!-- Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".header-content h4");
+            textElement.style.color = "red";
+            textElement.style.textAlign = "center";
+            const texts = [
+                "Software Engineer.",
+                "Photographer.",
+                "IoT Enthusiast.",
+                "Graphic Designer."
+            ];
+            let index = 0;
 
-                function changeText() {
-                    textElement.style.opacity = 0; // Fade out
-                    setTimeout(() => {
-                        index = (index + 1) % texts.length; // Loop back
-                        textElement.textContent = texts[index]; // Change text
-                        textElement.style.opacity = 1; // Fade in
-                    }, 1000); // Wait for fade out transition
-                }
+            function changeText() {
+                textElement.style.opacity = 0; // Fade out
+                setTimeout(() => {
+                    index = (index + 1) % texts.length; // Loop back
+                    textElement.textContent = texts[index]; // Change text
+                    textElement.style.opacity = 1; // Fade in
+                }, 1000); // Wait for fade out transition
+            }
 
-                setInterval(changeText, 2000); // Change text every 4 seconds
-            });
-        </script>
-        </body>
-        </html>
+            setInterval(changeText, 2000); // Change text every 4 seconds
+        });
+    </script>
+</body>
+
+</html>
