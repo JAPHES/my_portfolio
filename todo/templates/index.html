@@ -10,20 +10,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+                   /*             styling body                      */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e3f2fd;
+            background-color: green;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Center the header section with limited width */
+        /*            Center the header section with limited width              */
         .header-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 1250px;
+            max-width: 1350px;
             margin: 0 auto;
             padding: 20px;
             background-color: black;
@@ -32,11 +33,10 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             height: 450px;
-            background-image: url('{% static 'images/japh.png' %}');
-            background-size: cover;
-            background-attachment: fixed;
-        }
 
+
+        }
+        /*              styling the html tags                           */
         h1 {
             color: blue;
         }
@@ -56,7 +56,7 @@
         span {
             color: greenyellow;
         }
-
+        /*                    styling the header part                         */
         .header-content {
             position: relative;
             left: -300px;
@@ -109,7 +109,7 @@
             margin: 0;
         }
 
-        /* About Me Styling */
+        /*                           About Me Styling                       */
         #about-me {
             display: flex;
             justify-content: center;
@@ -117,7 +117,7 @@
             padding: 40px 20px;
             background-color: white;
         }
-
+        /*                    styling the about me container                                          */
         .about-me-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -173,11 +173,12 @@
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
+
         }
 
         .card {
             width: 500px;
-            height: 550px;
+            height: 600px;
             background: linear-gradient(90deg, #ff33a6, #3399ff);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -267,6 +268,7 @@
 
         .btn:hover {
             background-color: #0056b3;
+            color: white;
         }
 
         .vision-mission-section {
@@ -306,7 +308,7 @@
             color: blue;
         }
 
-        /* Button Styling */
+        /*              Button Styling  View all project                       */
         .styled-button {
             padding: 15px 30px;
             background-color: #007bff;
@@ -346,12 +348,12 @@
     </style>
 </head>
 
-<body>
+<body >
 
-    <!------------------------------------ Include Navbar ------------------------------------>
+    <!------------------------------------ Include Navbar --------------------------------------------------------------------->
     {% include 'navbar.html' %}
 
-    <!-- Header Section -->
+    <!------------------------------------------ Header Section ----------------------------------------------------------------->
     <header class="header-section">
         <div class="header-content">
             <h2 class="tagline">HI,I'M</h2>
@@ -363,10 +365,10 @@
         </div>
     </header>
 
-    <!-- About Me Section -->
+    <!------------------------------------ About Me Section ---------------------------------------------------------------------------->
     <section id="about-me">
         <div class="about-me-container">
-            <!-- Left Column -->
+            <!---------------------------------- Left Column ---------------------------------------------------------------------->
             <div class="text-column">
                 <div class="wrapper">
                     <h2><u>Who Am I?</u></h2>
@@ -384,20 +386,20 @@
                 </div>
             </div>
 
-            <!-- Right Column that contains my image-->
+            <!----------------------------- Right Column that contains my image------------------------------------------------------->
             <div class="image-column">
                 <img src="{% static 'images/japhess.jpg' %}" alt="About Me Picture" class="about-me-image">
             </div>
         </div>
     </section>
 
-    <!-- What I Do -->
+    <!---------------------------------------------- What I Do ------------------------------------------------------------------------->
     <div class="intro-text">
         <h2><u>What I Do!</u></h2>
         <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation.</p>
     </div>
 
-    <!-- Cards Container -->
+    <!------------------------------------------------- Cards Container --------------------------------------------------------------->
     <div class="what-i-do-container">
         <div class="card">
             <h3>Graphic Design</h3>
@@ -414,14 +416,14 @@
     </div>
     <br><br>
 
-    <!-- Current Projects -->
+    <!--------------------------------------------- Current Projects --------------------------------------------------------------->
     <div class="intro-text">
         <h2><u>Latest Works!</u></h2>
         <p>Showcasing some of my recent projects that highlight creativity, functionality, and innovation..</p>
     </div>
 
     <div class="columns-container">
-        <!-- Column 1 -->
+        <!------------------------------------- Column 1 -------------------------------------------------------------------------->
         <div class="column" style="background-image: url('{% static 'images/farm.jpg' %}');">
             <div class="column-overlay">
                 <h3>Farms Website</h3>
@@ -432,7 +434,7 @@
             </div>
         </div>
 
-        <!-- Column 2 -->
+        <!----------------------------------------------- Column 2 --------------------------------------------------------------->
         <div class="column" style="background-image: url('{% static 'images/japhesgraphic.jpg' %}');">
             <div class="column-overlay">
                 <h3>Personal Portfolio</h3>
@@ -443,7 +445,7 @@
             </div>
         </div>
 
-        <!-- Column 3 -->
+        <!----------------------------------------------- Column 3 ------------------------------------------------------------->
         <div class="column" style="background-image: url('{% static 'images/smarthelmet.jpg' %}');">
             <div class="column-overlay">
                 <h3>IoT Project</h3>
@@ -459,7 +461,7 @@
         <button type="button" class="styled-button">VIEW ALL PROJECTS</button>
     </a>
 
-    <!-- Vision and Mission Section -->
+    <!--------------------------------------------- Vision and Mission Section ------------------------------------------------->
     <br>
     <br>
     <section class="vision-mission-section">
@@ -476,10 +478,10 @@
         </div>
     </section>
 
-    <!-- Include Footer -->
+    <!-------------------------------------------- Include Footer -------------------------------------------------------------------->
     {% include 'footer.html' %}
 
-    <!-- Script -->
+    <!---------------------------------------------- Script code-------------------------------------------------------------------------->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const textElement = document.querySelector(".header-content h4");
